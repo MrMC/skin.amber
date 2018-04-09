@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.amber" version="2.1.4" name="Amber" provider-name="Jester, Pecinko">
+<addon id="skin.amber" version="2.2.3" name="Amber" provider-name="Jester, Pecinko">
   <requires>
-    <import addon="xbmc.gui" version="5.9.0"/>
-    <import addon="script.favourites" version="6.0.2"/>
-    <import addon="service.skin.widgets" version="0.0.29"/>
+    <import addon="xbmc.gui" version="5.10.0"/>
     <import addon="resource.uisounds.amber" version="1.0.0"/>
   </requires>
   <extension
@@ -36,8 +34,8 @@
     <description lang="sv">Inget överflödigt, bara dina media med enkelt navigeringsinterface.[CR]Använder texturer från skalen Mediastream och Aeon.</description>
     <description lang="zh">没有花里胡哨的东西，只是你的媒体和易于浏览的界面。[CR]使用了一些来自 Mediastream 和 Aeon 皮肤的纹理材料.</description>
     <platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
-    <source>https://github.com/jester-xbmc/skin.amber</source>
-    <forum>http://forum.kodi.tv/forumdisplay.php?fid=203</forum>
+    <license></license>
+    <source></source>
+    <forum></forum>
   </extension>
 </addon>

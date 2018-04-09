@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog">
   <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsActive(script-XBMC-Subtitles-main.xml)]</visible>
-  <visible>Window.IsActive(DialogFullScreenInfo.xml) | Window.IsActive(videoosd.xml) | [Window.IsVisible(FullScreenVideo) + !System.IdleTime(20) + [Player.Caching | Player.Seeking | player.forwarding | player.rewinding | Player.DisplayAfterSeek | Player.Paused]]</visible>
+  <visible>Window.IsActive(DialogFullScreenInfo.xml) | Window.IsActive(videoosd.xml) | [Window.IsVisible(FullScreenVideo) + [Player.Caching | Player.Seeking | player.forwarding | player.rewinding | Player.DisplayAfterSeek | Player.Paused]]</visible>
   <include>OSDFade</include>
+  <onunload>Dialog.Close(osdsettings)</onunload>
   <controls>
     <control type="group" description="Top Bar">
       <control type="image" description="Background">
@@ -62,7 +63,18 @@
           <info>Player.Progress</info>
           <visible>true</visible>
         </control>
-        <control type="label" description="Progress time label">
+        <control type="slider" id="401">
+          <description>Seek Slider</description>
+          <posx>600</posx>
+          <posy>-20</posy>
+          <width>720</width>
+          <height>18</height>
+          <texturesliderbar>OSD/seekslider.png</texturesliderbar>
+        <textureslidernib>OSD/ScrollbarNibNF.png</textureslidernib>
+        <textureslidernibfocus>OSD/ScrollbarNibFO.png</textureslidernibfocus>
+          <visible>!VideoPlayer.Content(livetv)</visible>
+        </control>
+      <control type="label" description="Progress time label">
           <posx>580</posx>
           <posy>-5</posy>
           <height>30</height>
@@ -122,6 +134,7 @@
         <label>32 X</label>
       </control>
       <control type="label" description="Seek time label">
+        <visible>!Player.Caching</visible>
         <include>SeekbarLabels</include>
         <label>$VAR[SeekLabel]</label>
       </control>
