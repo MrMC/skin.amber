@@ -4,7 +4,7 @@
     <include name="PVR.List">
         <control type="group">
             <animation effect="slide" start="0,0" end="0,150" time="0" condition="PVR.IsRecording">conditional</animation>
-            <visible>Container(300).HasFocus(300) + [PVR.IsRecording | PVR.HasNonRecordingTimer] + !Skin.HasSetting(VerticalHome)</visible>
+            <visible>Container(9000).HasFocus(9000) + [PVR.IsRecording | PVR.HasNonRecordingTimer] + !Skin.HasSetting(VerticalHome)</visible>
             <control type="image">
                 <left>1100</left>
                 <top>170</top>
@@ -64,7 +64,7 @@
         </control>
         <!--horizontal home currently recording label-->
         <control type="group">
-            <visible>Container(300).HasFocus(300) + [PVR.IsRecording] + !Skin.HasSetting(VerticalHome)</visible>
+            <visible>Container(9000).HasFocus(9000) + [PVR.IsRecording] + !Skin.HasSetting(VerticalHome)</visible>
             <control type="image">
                 <left>1100</left>
                 <top>170</top>
@@ -125,7 +125,7 @@
         <!-- vertical home next recording label-->
         <control type="group">
             <animation effect="slide" start="0,0" end="0,150" time="0" condition="PVR.IsRecording">conditional</animation>
-            <visible>Container(300).HasFocus(300) + [PVR.IsRecording | PVR.HasNonRecordingTimer] + Skin.HasSetting(VerticalHome)</visible>
+            <visible>Container(9000).HasFocus(9000) + [PVR.IsRecording | PVR.HasNonRecordingTimer] + Skin.HasSetting(VerticalHome)</visible>
             <control type="image">
                 <left>1065l</left>
                 <top>70</top>
@@ -185,7 +185,7 @@
         </control>
         <!--vertical home currently recording label-->
         <control type="group">
-            <visible>Container(300).HasFocus(300) + [PVR.IsRecording] + Skin.HasSetting(VerticalHome)</visible>
+            <visible>Container(9000).HasFocus(9000) + [PVR.IsRecording] + Skin.HasSetting(VerticalHome)</visible>
             <control type="image">
                 <left>1065l</left>
                 <top>70</top>
@@ -258,10 +258,10 @@
     </control>
     <control type="fixedlist" id="111" description="Favourites">
       <visible>!IsEmpty(Window(Home).Property(favourite.1.path))</visible>
-      <visible>Container(300).HasFocus(7)</visible>
+      <visible>Container(9000).HasFocus(7)</visible>
       <onright>111</onright>
-      <onup>300</onup>
-      <ondown>300</ondown>
+      <onup>9000</onup>
+      <ondown>9000</ondown>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
       <onleft condition="!Skin.HasSetting(VerticalHome)">111</onleft>
       <include condition="!Skin.HasSetting(VerticalHome)">Horizontal_Shelf_Commons</include>
@@ -285,10 +285,10 @@
     </control>
     <control type="fixedlist" id="211" description="Addons">
       <visible>!IsEmpty(Skin.String(ShelfAddons.1.Label)) | !IsEmpty(Skin.String(ShelfAddons.2.Label)) | !IsEmpty(Skin.String(ShelfAddons.3.Label)) | !IsEmpty(Skin.String(ShelfAddons.4.Label)) | !IsEmpty(Skin.String(ShelfAddons.5.Label))</visible>
-      <visible>Container(300).HasFocus(2)</visible>
+      <visible>Container(9000).HasFocus(2)</visible>
       <onright>211</onright>
-      <onup>300</onup>
-      <ondown>300</ondown>
+      <onup>9000</onup>
+      <ondown>9000</ondown>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
       <onleft condition="!Skin.HasSetting(VerticalHome)">211</onleft>
       <include condition="!Skin.HasSetting(VerticalHome)">Horizontal_Shelf_Commons</include>
@@ -312,9 +312,9 @@
     </control>
     <control type="fixedlist" id="8000" description="Movies XBMC">
       <visible>IntegerGreaterThan(Container(8000).NumItems,1)</visible>
-      <visible>Container(300).HasFocus(4)</visible>
+      <visible>[Container(9000).HasFocus(4) | Stringcompare(Container(9000).ListItem.Property(type),movies)]</visible>
       <onright>8000</onright>
-      <onup>300</onup>
+      <onup>9000</onup>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
       <onleft condition="!Skin.HasSetting(VerticalHome)">8000</onleft>
       <ondown condition="Control.IsVisible(8010)">8010</ondown>
@@ -337,11 +337,11 @@
     </control>
     <control type="fixedlist" id="8010" description="TOP Shortcuts">
       <visible>IntegerGreaterThan(Container(8010).NumItems,1)</visible>
-      <visible>Container(300).HasFocus(4)</visible>
+      <visible>[Container(9000).HasFocus(4) | Stringcompare(Container(9000).ListItem.Property(type),movies)]</visible>
       <onright>8010</onright>
       <onup condition="Control.IsVisible(8000)">8000</onup>
       <onup condition="!Control.IsVisible(8000)">300</onup>
-      <ondown>300</ondown>
+      <ondown>9000</ondown>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
       <onleft condition="!Skin.HasSetting(VerticalHome)">8010</onleft>
       <include condition="!Skin.HasSetting(VerticalHome)">Horizontal_Shelf_Commons</include>
@@ -362,9 +362,9 @@
     </control>
     <control type="fixedlist" id="514" description="Recent concerts">
       <visible>!IsEmpty(Window(Home).Property(RecentMusicVideo.1.Title))</visible>
-      <visible>Container(300).HasFocus(14)</visible>
+      <visible>Container(9000).HasFocus(14)</visible>
       <onright>514</onright>
-      <onup>300</onup>
+      <onup>9000</onup>
       <ondown condition="Control.IsVisible(515)">515</ondown>
       <ondown condition="!Control.IsVisible(515)">300</ondown>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
@@ -390,13 +390,13 @@
     </control>
     <control type="fixedlist" id="515" description="Recommended concerts">
       <visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))</visible>
-      <visible>Container(300).HasFocus(14)</visible>
+      <visible>Container(9000).HasFocus(14)</visible>
       <onright>515</onright>
       <onup condition="Control.IsVisible(514)">514</onup>
       <onup condition="!Control.IsVisible(514)">300</onup>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
       <onleft condition="!Skin.HasSetting(VerticalHome)">514</onleft>
-      <ondown>300</ondown>
+      <ondown>9000</ondown>
       <include condition="!Skin.HasSetting(VerticalHome)">Horizontal_Shelf_Commons</include>
       <include>Recommended_Posters</include>
       <content>
@@ -419,9 +419,9 @@
     </control>
     <control type="fixedlist" id="8001" description="TV Shows XBMC">
       <visible>IntegerGreaterThan(Container(8001).NumItems,1)</visible>
-      <visible>Container(300).HasFocus(5)</visible>
+      <visible>[Container(9000).HasFocus(5) | Stringcompare(Container(9000).ListItem.Property(type),tvshows)]</visible>
       <onright>8001</onright>
-      <onup>300</onup>
+      <onup>9000</onup>
       <ondown condition="Control.IsVisible(8011)">8011</ondown>
       <ondown condition="!Control.IsVisible(8011)">300</ondown>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
@@ -444,11 +444,11 @@
     </control>
     <control type="fixedlist" id="8011" description="TV Shows XBMC Widgets">
       <visible>IntegerGreaterThan(Container(8011).NumItems,1)</visible>
-      <visible>Container(300).HasFocus(5)</visible>
+      <visible>[Container(9000).HasFocus(5) | Stringcompare(Container(9000).ListItem.Property(type),tvshows)]</visible>
       <onright>8011</onright>
       <onup condition="Control.IsVisible(8001)">8001</onup>
       <onup condition="!Control.IsVisible(8001)">300</onup>
-      <ondown>300</ondown>
+      <ondown>9000</ondown>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
       <onleft condition="!Skin.HasSetting(VerticalHome)">8011</onleft>
       <include condition="!Skin.HasSetting(VerticalHome)">Horizontal_Shelf_Commons</include>
@@ -469,9 +469,9 @@
     </control>
     <control type="fixedlist" id="8002" description="TOP Shortcuts">
       <visible>IntegerGreaterThan(Container(8002).NumItems,1)</visible>
-      <visible>Container(300).HasFocus(6)</visible>
+      <visible>[Container(9000).HasFocus(6) | Stringcompare(Container(9000).ListItem.Property(type),albums)]</visible>
       <onright>8002</onright>
-      <onup>300</onup>
+      <onup>9000</onup>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
       <onleft condition="!Skin.HasSetting(VerticalHome)">8002</onleft>
       <ondown condition="Control.IsVisible(513)">513</ondown>
@@ -494,11 +494,11 @@
     </control>
     <control type="fixedlist" id="513" description="TOP Shortcuts">
       <visible>![Skin.HasSetting(Hide.RecentlyAdded) | IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))]</visible>
-      <visible>Container(300).HasFocus(6)</visible>
+      <visible>[Container(9000).HasFocus(6) | Stringcompare(Container(9000).ListItem.Property(type),albums)]</visible>
       <onright>513</onright>
       <onup condition="Control.IsVisible(8002)">8002</onup>
       <onup condition="!Control.IsVisible(8002)">300</onup>
-      <ondown>300</ondown>
+      <ondown>9000</ondown>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
       <onleft condition="!Skin.HasSetting(VerticalHome)">513</onleft>
       <include condition="!Skin.HasSetting(VerticalHome)">Horizontal_Shelf_Commons</include>
@@ -522,10 +522,10 @@
     </control>
     <control type="fixedlist" id="512" description="Music video clips">
       <visible>![Skin.HasSetting(Hide.RecentlyAdded) | IsEmpty(Window(Home).Property(RecentMusicVideo.1.Title))]</visible>
-      <visible>Container(300).HasFocus(13)</visible>
+      <visible>Container(9000).HasFocus(13)</visible>
       <onright>512</onright>
-      <onup>300</onup>
-      <ondown>300</ondown>
+      <onup>9000</onup>
+      <ondown>9000</ondown>
       <onleft condition="Skin.HasSetting(VerticalHome)">300</onleft>
       <onleft condition="!Skin.HasSetting(VerticalHome)">512</onleft>
       <include>RecentlyAdded_Albums</include>
