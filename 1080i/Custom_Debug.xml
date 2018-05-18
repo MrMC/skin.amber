@@ -55,7 +55,7 @@
         <textcolor>Highlight</textcolor>
         <font>SysInfo</font>
         <align>left</align>
-        <label>$INFO[ListItem.property(IsResumable),RESUMABLE: ] DDD $INFO[Container(9000).ListItem.Property(uuid)]</label>
+        <label>$INFO[ListItem.property(IsResumable),RESUMABLE: ] DDD $INFO[Container(300).ListItem.Property(uuid)]</label>
       </control>
       <control type="label">
         <visible>Window.IsActive(home)</visible>

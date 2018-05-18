@@ -5,7 +5,7 @@
     <width>1824</width>
     <height>345</height>
     <onup>9001</onup>
-    <onback>9000</onback>
+    <onback>300</onback>
     <movement>6</movement>
   </include>
   <include name="Horizontal_Label_Commons">
@@ -93,14 +93,14 @@
             <texture flipy="true">home/HomeMenuBack3.png</texture>
           </control>
         </control>
-        <control type="fixedlist" id="9000" description="Main Bar">
-          <animation effect="fade" time="200" start="100" end="25" reversible="true" condition="!Control.HasFocus(9000)">Conditional</animation>
+        <control type="fixedlist" id="300" description="Main Bar">
+          <animation effect="fade" time="200" start="100" end="25" reversible="true" condition="!Control.HasFocus(300)">Conditional</animation>
           <posx>-338</posx>
           <posy>689</posy>
           <width>3069</width>
           <height>225</height>
-          <onleft>9000</onleft>
-          <onright>9000</onright>
+          <onleft>300</onleft>
+          <onright>300</onright>
           <ondown>9001</ondown>
           <onup condition="Skin.HasSetting(Shelf.Favourites) | Skin.HasSetting(Shelf.Addons) | !Skin.HasSetting(Hide.RecentlyAdded)">700</onup>
           <pagecontrol>-</pagecontrol>
@@ -157,8 +157,8 @@
           <orientation>horizontal</orientation>
           <focusposition>3</focusposition>
           <movement>3</movement>
-          <onup>9000</onup>
-          <onback>SetFocus(9000)</onback>
+          <onup>300</onup>
+          <onback>SetFocus(300)</onback>
           <ondown>700</ondown>
           <itemlayout width="256" height="50">
             <control type="label">
