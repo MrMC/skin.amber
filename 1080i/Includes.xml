@@ -895,7 +895,8 @@
       <visible>PVR.HasTVChannels</visible>
       <label>$LOCALIZE[31500]</label>
       <thumb fallback="special://skin/backgrounds/Pvr.jpg">$INFO[Skin.String(Pvr.Background)]</thumb>
-      <onclick>ActivateWindow(TVChannels)</onclick>
+      <onclick condition="System.GetBool(pvrmenu.TvMenuToGuide)">ActivateWindow(TVGuide)</onclick>
+      <onclick condition="!System.GetBool(pvrmenu.TvMenuToGuide)">ActivateWindow(TVChannels)</onclick>
     </item>
     <item id="301" description="Live Radio">
       <visible>PVR.HasRadioChannels</visible>
@@ -1171,7 +1172,7 @@
       <visible>Container(300).HasFocus(10)</visible>
       <label>$LOCALIZE[20183]</label>
       <onclick>XBMC.ReloadSkin()</onclick>
-    </item>    
+    </item>
     <item id="100" description="Tv Channels">
       <visible>Container(300).HasFocus(300)</visible>
       <label>19019</label>
