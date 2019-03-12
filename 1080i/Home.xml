@@ -81,7 +81,6 @@
         <label>$INFO[Container(311).ListItem.Property(Plot)]</label>
       </control>
     </control>
-    <include condition="Skin.HasSetting(holiday)">Holiday</include>
     <control type="image">
       <description>LOGO</description>
       <visible>Skin.HasSetting(VerticalHome)</visible>

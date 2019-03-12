@@ -478,18 +478,6 @@
               <label2>$LOCALIZE[106]</label2>
               <onclick>Skin.ToggleSetting(ShowMasterLockTitle)</onclick>
             </item>
-            <item id="17" description="Holiday">
-              <visible>Skin.HasSetting(holiday)</visible>
-              <label>$LOCALIZE[31996]</label>
-              <label2>[COLOR=Highlight]$LOCALIZE[305][/COLOR]</label2>
-              <onclick>Skin.ToggleSetting(holiday)</onclick>
-            </item>
-            <item id="17" description="Holiday">
-              <visible>!Skin.HasSetting(holiday)</visible>
-              <label>$LOCALIZE[31996]</label>
-              <label2>$LOCALIZE[1223]</label2>
-              <onclick>Skin.ToggleSetting(holiday)</onclick>
-            </item>
             <item id="18" description="Reset Skin">
               <label>$LOCALIZE[31038]</label>
               <onclick>Skin.ResetSettings</onclick>
@@ -1836,10 +1824,6 @@
       <orientation>vertical</orientation>
       <onleft>9003</onleft>
       <onright>9000</onright>
-    </control>
-    <control type="group" description="Holiday theme">
-      <visible>Skin.HasSetting(holiday)</visible>
-      <include>Holiday</include>
     </control>
   </controls>
 </window>
