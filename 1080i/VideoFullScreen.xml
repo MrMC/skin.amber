@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+  <animation effect="fade" time="500">WindowOpen</animation>
   <animation effect="fade" time="200">WindowClose</animation>
+  <defaultcontrol always="true">17</defaultcontrol>
   <controls>
+    <control type="button" id="17">
+			<width>250</width>
+			<bottom>100</bottom>
+			<right>100</right>
+			<align>center</align>
+			<textcolor>White</textcolor>
+			<focusedcolor>Highlight</focusedcolor>
+			<label>Skip Intro</label>
+			<animation effect="fade" time="700">VisibleChange</animation>
+			<visible>!IsEmpty(Window.Property(EnableSkip))</visible>
+    </control>
     <control type="group" id="1">
 			<posy>820</posy>
 			<include>OSDFade</include>
